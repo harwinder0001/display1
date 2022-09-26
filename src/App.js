@@ -19,7 +19,7 @@ function CRUD(){
     
     return(
         <div>
-            <h1>CRUD Insert, Update and Delete</h1><br/>
+            {/* <h1>CRUD Insert, Update and Delete</h1><br/>
             <h1>CRUD Insert, Update and Delete</h1><br/>
              
            <br/>
@@ -43,7 +43,7 @@ function CRUD(){
              
                 </div>
                 )
-            }
+            } */}
         </div>
     );
 }
