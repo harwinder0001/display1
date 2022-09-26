@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { render } from "react-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+
+function CRUD(){
+    const [name,setName]=useState("")
+    const [age,setAge] =useState("");
+    const [allData,setAllData]=useState([])
+   
+    const handleAdd=()=>{
+        if(name.length!==0){
+        setAllData(newData=>[...newData,age,name])
+        setName("")
+        }
+    }
+
+
+    
+    return(
+        <div>
+            <h1>CRUD Insert, Update and Delete</h1><br/>
+             
+           <br/>
+
+           
+            <h2>Name Of Student</h2>
+            <input value={name} onChange={(e)=>setName(e.target.value)} /><br/>
+
+            <h2>Age</h2>
+           <input value={age} type="number" maxLength={2} onChange={(e)=>setAge(e.target.value)} /><br/><br/>
+           
+      
+            <button onClick={handleAdd}>Add</button><br/><br/>
+
+            {
+
+              [...allData].reverse().map((val, i) =>
+                <div>
+                    
+                  <h4 className = "hh">{val}</h4>
+             
+                </div>
+                )
+            }
+        </div>
+    );
 }
-
-export default App;
+export default CRUD; 
